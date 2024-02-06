@@ -7,8 +7,8 @@ T squaring(T el) {
 	return el * el;
 }
 
-template <>
-std::vector<int> squaring(std::vector<int> vec) {
+template <class T>
+std::vector<T> squaring(std::vector<T> vec) {
 	for (int i = 0; i < vec.size(); i++)
 		vec[i] = vec[i] * vec[i];
 	return vec;
@@ -18,7 +18,7 @@ std::vector<int> squaring(std::vector<int> vec) {
 int main()
 {
 	int elem = 7;
-	std::vector<int> vec = { 1, 3, 9, -3, 12 };
+	std::vector<double> vec = { 1.5, 3, 9, -3, 12 };
 	std::cout << squaring(elem) << "\n";
 	vec = squaring(vec);
 	for (int i = 0; i < vec.size(); i++)
